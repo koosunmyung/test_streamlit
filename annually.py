@@ -6,7 +6,22 @@ import numpy as np
 import datetime as dt
 from creatdf import df_base
 from creatdf import lstday
+
+
 st.set_page_config(page_title="년도별 손익", page_icon=":bar_chart:", layout="centered")
+
+quarter = df_base['quarter'].unique().tolist()
+quarter_selection = st.slider('분기선택:', 
+                                min_value= min(quarter),
+                                max_value= max(quarter),
+                                value=(min(quarter),max(quarter)))
+# number_of_result = df[mask].shape[0]
+# st.markdown(f'*Available Results: {number_of_result}*')                                         
+# age_selection = st.slider('Age:',
+#                         # min_value= min(ages),
+#                         # max_value= max(ages),
+#                         # value=(min(ages),max(ages)))
+#                         value=(min_value, max_value))
 
 
 # excel_file = 'F:/strea/STREAM/dbd_ex/finan.xlsx'
@@ -45,8 +60,8 @@ df_b = df_base.reset_index()# df_b = (df.groupby(['회계연도'])[['매출','�
 print(df_b)
 # df_b2 = (df.groupby(['회계연도','매출','비용', '영업이익', '보고반영']).sum()/-100000000).round(1)
 # df_c.to_excel('C:/CODING/Streamlit/dashboard_ex/test.xlsx')
-
-df_ann = df_b.groupby(['회계연도'])['매출','비용', '영업이익', '보고반영'].sum()
+mask = (df_base['quarter'].between(*quarter_selection))
+df_ann = df_b[mask].groupby(['회계연도'])['매출','비용', '영업이익', '보고반영'].sum()
 df_ann = df_ann.reset_index()
 df_ann=pd.melt(df_ann,id_vars=['회계연도'],value_vars= ['매출','비용','영업이익'])
 # df_base.to_excel('F:/strea/STREAM/dbd_ex/test11.xlsx')
