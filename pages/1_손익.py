@@ -9,7 +9,7 @@ from vega_datasets import data
 import datetime as dt
 from annually import df_b
 from creatdf import lstday
-from annually import quarter_selection
+# from annually import quarter_selection
 # import annually
 st.caption(f"기준년월 : {lstday}")
 # st.set_page_config2(page_title="연도별 수입내역", page_icon=":bar_chart:", layout="centered")
