@@ -34,5 +34,5 @@ for x in df.index:
  
 
 df_base = (df.groupby(['회계연도','수입비용','중분류','보고반영','quarter']).sum()/-100000000).round(1)
-df_base.to_excel('F:/strea/STREAM/dbd_ex/test11.xlsx')
+# df_base.to_excel('F:/strea/STREAM/dbd_ex/test11.xlsx')
 print(df)
