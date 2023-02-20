@@ -6,7 +6,7 @@ import numpy as np
 import datetime as dt
 
 
-excel_file = 'F:/strea/STREAM/t_f/test_streamlit/finan.xlsx'
+excel_file = 'finan.xlsx'
 sheet_name = 'pp'
 
 df = pd.read_excel(excel_file,
