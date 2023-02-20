@@ -73,7 +73,8 @@ st.caption(f"기준년월 : {lstday}")
 # df_t = df_b[df_b['금액'] != 0]
 
 df_b = df_b.reset_index()
-mask22 = (df_b['회계연도'] == 2022) & (df_b['수입비용'] == "수입") & (df_b['quarter'].between(*quarter_selection))
+mask22 = (df_b['회계연도'] == 2022) & (df_b['수입비용'] == "수입") 
+# & (df_b['quarter'].between(*quarter_selection))
 # df1 = df_b[mask22].groupby(by=["보고반영"]).sum()[["금액"]].sort_values(by="금액", ascending=False).round()
 df1 = df_b.loc[mask22]
 # df_b.to_excel('F:/strea/STREAM/dbd_ex/test3.xlsx')
