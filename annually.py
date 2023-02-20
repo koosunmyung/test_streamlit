@@ -52,7 +52,7 @@ df_ann=pd.melt(df_ann,id_vars=['회계연도'],value_vars= ['매출','비용','�
 # df_base.to_excel('F:/strea/STREAM/dbd_ex/test11.xlsx')
 
 st.caption(f"기준년월 : {lstday}")
-fig = px.bar(df_ann, x="회계연도", y="value", color="variable", barmode='group', text_auto=True , template="plotly_dark",width=500, height=600,
+fig = px.bar(df_ann, x="회계연도", y="value", color="variable", barmode='group', text_auto=True , template="plotly_dark",width=400, height=600,
 color_discrete_map={
         '매출': 'blue',
         '비용': 'teal',
