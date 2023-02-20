@@ -10,11 +10,11 @@ from creatdf import lstday
 
 st.set_page_config(page_title="년도별 손익", page_icon=":bar_chart:", layout="centered")
 
-quarter = df_base['quarter'].unique().tolist()
-quarter_selection = st.slider('분기선택:', 
-                                min_value= min(quarter),
-                                max_value= max(quarter),
-                                value=(min(quarter),max(quarter)))
+# quarter = df_base['quarter'].unique().tolist()
+# quarter_selection = st.slider('분기선택:', 
+#                                 min_value= min(quarter),
+#                                 max_value= max(quarter),
+#                                 value=(min(quarter),max(quarter)))
 # number_of_result = df[mask].shape[0]
 # st.markdown(f'*Available Results: {number_of_result}*')                                         
 # age_selection = st.slider('Age:',
